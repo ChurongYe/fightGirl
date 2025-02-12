@@ -3,23 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MeleeEnemy : EnemyControl
-{
-    [Header ("Attack")]
-    public int attackDamage = 1;    
+{ 
     [Header("Move")]
     public float jumpForce = 6f; 
     public float jumpInterval = 3f; 
     public float direction = 1f; 
-
-    private Rigidbody rb;
     private bool isGrounded = false; 
     private float jumpTimer = 0f;
     private void Start()
     {
         damageCooldown = 0.5f;
-        rb = GetComponent<Rigidbody>();
     }
-    private void OnTriggerEnter(Collider collision)
+
+    public override void HandleCollision(Collider collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
@@ -34,7 +30,7 @@ public class MeleeEnemy : EnemyControl
                 Playerhealth.TakeDamage(attackDamage);
             }
         }
-        if (collision.gameObject.CompareTag("Hitarea"))
+        else if (collision.gameObject.CompareTag("Hitarea"))
         {
             if (health > 0)
             {
@@ -66,9 +62,4 @@ public class MeleeEnemy : EnemyControl
         rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z);
     }
 
-    public override void TakeDamage(int damage)
-    {
-        base.TakeDamage(damage);
-
-    }
 }

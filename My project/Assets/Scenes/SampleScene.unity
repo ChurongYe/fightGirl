@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a0b02ddd04361f4c8f788847af08fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: []
+  enemiesscripts: []
 --- !u!4 &440875524
 Transform:
   m_ObjectHideFlags: 0
@@ -856,7 +856,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18f55239d1a6bd4ca5d248c60ed7ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 2
+  rotationSpeed: 1
   rotationAngle: 50
 --- !u!1 &963194225
 GameObject:
@@ -1073,7 +1073,7 @@ MonoBehaviour:
   rotateSpeed: 180
   moveRange: 5
   waitTime: 5
-  rotationSpeed: 1.5
+  rotationSpeed: 1
   rotationAngle: 50
 --- !u!1 &1300375352
 GameObject:
@@ -1326,11 +1326,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0dd9e6be518ab41865bf7fdb9c48f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  attackDamage: 1
   health: 3
   damageCooldown: 0.5
   Playerhealth: {fileID: 0}
   Player: {fileID: 0}
-  attackDamage: 1
   jumpForce: 6
   jumpInterval: 2.5
   direction: 1
@@ -1476,11 +1477,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79e9bb865b9414144b02c29d91b08d9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  attackDamage: 1
   health: 5
   damageCooldown: 2
   Playerhealth: {fileID: 0}
   Player: {fileID: 0}
-  attackDamage: 1
   Hitarea: {fileID: 442021427}
   bounceForce: 7
 --- !u!54 &1555499581

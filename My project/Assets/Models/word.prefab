@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8535217795288800522}
   - component: {fileID: 1266582458356167525}
   - component: {fileID: 7667868052704845140}
+  - component: {fileID: -6722947933646268796}
   m_Layer: 0
   m_Name: word
   m_TagString: Enemy
@@ -118,11 +119,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ea186d71bce084f9e0c392047eba94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  attackDamage: 1
   health: 1
   damageCooldown: 0
   Playerhealth: {fileID: 0}
   Player: {fileID: 0}
-  attackDamage: 1
-  Movespeed: 0
   moveSpeed: 5
   followDistance: 50
+--- !u!114 &-6722947933646268796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7671203485357333799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b961912e58b2a854cbfc8a2f5620a612, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 0}
+  attackDamage: 1
+  health: 1
+  damageCooldown: 0
+  Playerhealth: {fileID: 0}
+  Player: {fileID: 0}

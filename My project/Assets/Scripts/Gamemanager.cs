@@ -4,26 +4,28 @@ using UnityEngine;
 
 public class Gamemanager : MonoBehaviour
 {
-    public List<EnemyControl> enemies = new List<EnemyControl>();
+    public List<EnemyControl> enemiesscripts = new List<EnemyControl>();
+
     private void Update()
     {
         EnemyControl[] foundEnemies = FindObjectsOfType<EnemyControl>();
-        enemies.RemoveAll(enemy => enemy == null);
+        enemiesscripts.RemoveAll(enemy => enemy == null);
 
         foreach (EnemyControl enemy in foundEnemies)
         {
-            if (!enemy.gameObject.CompareTag("Player") && !enemies.Contains(enemy))
+            if (!enemy.gameObject.CompareTag("Player") && !enemiesscripts.Contains(enemy))
             {
-                enemies.Add(enemy);
+                enemiesscripts.Add(enemy);
             }
         }
 
-        foreach (EnemyControl enemy in enemies)
+        foreach (EnemyControl enemy in enemiesscripts)
         {
             if (enemy != null)  
             {
                 enemy.Attack();
             }
         }
+    
     }
 }

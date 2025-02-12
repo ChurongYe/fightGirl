@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class PlayerHealth : EnemyControl
 {
-    public int attackDamage = 1;
     public GameObject Hitarea;
     public float bounceForce = 5f;
-    private Rigidbody rb;
     private void Start()
     {
         damageCooldown = 2f;
-        rb = GetComponent<Rigidbody>();
     }
     public override void Attack()
     {
@@ -22,7 +19,7 @@ public class PlayerHealth : EnemyControl
         base.TakeDamage(damage);
 
     }
-    private void OnTriggerEnter(Collider collision)
+    public override void HandleCollision(Collider collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
