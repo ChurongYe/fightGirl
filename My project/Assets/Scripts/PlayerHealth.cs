@@ -6,6 +6,7 @@ public class PlayerHealth : EnemyControl
 {
     public GameObject Hitarea;
     public float bounceForce = 5f;
+    public bool isInvincible = false;
     private void Start()
     {
         damageCooldown = 2f;
@@ -16,6 +17,11 @@ public class PlayerHealth : EnemyControl
     }
     public override void TakeDamage(int damage)
     {
+        if (isInvincible) 
+        {
+            return;
+        }
+
         base.TakeDamage(damage);
 
     }
@@ -28,5 +34,6 @@ public class PlayerHealth : EnemyControl
             rb.AddForce(collisionDirection * bounceForce, ForceMode.Impulse);
         }
     }
+
 
 }

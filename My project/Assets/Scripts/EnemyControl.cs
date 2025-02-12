@@ -30,7 +30,6 @@ public abstract class EnemyControl : MonoBehaviour
                 Die();
             }
         }
-
     }
     public void OnTriggerEnter(Collider collision)
     {

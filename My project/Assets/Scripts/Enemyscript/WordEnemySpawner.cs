@@ -9,7 +9,7 @@ public class WordEnemySpawner : MonoBehaviour
     public float attackInterval = 3f;
     public float Distance = 80f;  
     public LayerMask Wordenemy;
-    public bool Ifhit = false;
+    private bool Ifhit = false;
     private void Update()
     {
         Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);

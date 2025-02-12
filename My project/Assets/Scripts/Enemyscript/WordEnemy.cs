@@ -21,5 +21,29 @@ public class WordEnemy : EnemyControl
         }
         Destroy(this.gameObject, 6f);
     }
+    public override void HandleCollision(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            if (Playerhealth != null)
+            {
+                Playerhealth.TakeDamage(attackDamage);
+            }
+            this.transform.GetComponent<Collider>().enabled = false;
+            Destroy(this.gameObject, 1f);
+
+        }
+        if (collision.gameObject.CompareTag("Hitarea"))
+        {
+            if (health > 0)
+            {
+                TakeDamage(Playerhealth.attackDamage);
+            }
+        }
+        else
+        {
+            Destroy(this.gameObject, 6f);
+        }
+    }
 
 }
