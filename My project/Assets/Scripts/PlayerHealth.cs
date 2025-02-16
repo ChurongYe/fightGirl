@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : EnemyControl
 {
     public GameObject Hitarea;
     public float bounceForce = 5f;
     public bool isInvincible = false;
+    //
+    public Slider HP;
+    //
     private void Start()
     {
         damageCooldown = 2f;
@@ -33,6 +37,10 @@ public class PlayerHealth : EnemyControl
 
             rb.AddForce(collisionDirection * bounceForce, ForceMode.Impulse);
         }
+        //
+        if (collision.gameObject.CompareTag("PickUp"))
+            isInvincible = true;
+        //
     }
 
 
