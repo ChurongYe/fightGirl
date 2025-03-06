@@ -38,8 +38,8 @@ public class PlayerHealth : EnemyControl
             rb.AddForce(collisionDirection * bounceForce, ForceMode.Impulse);
         }
         //
-        if (collision.gameObject.CompareTag("PickUp"))
-            isInvincible = true;
+        //if (collision.gameObject.CompareTag("PickUp"))
+          //  isInvincible = true;
         //
     }
 
