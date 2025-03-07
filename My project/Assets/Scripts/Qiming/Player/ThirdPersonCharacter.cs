@@ -39,8 +39,8 @@ public class ThirdPersonCharacter : MonoBehaviour
         if (dir.magnitude >= 0.1f)
         {
             float targetAngle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg + Camera.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref RotateSpeed, TurnSmoothTime);
-            transform.rotation = Quaternion.Euler(0, angle, 0);
+            //float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref RotateSpeed, TurnSmoothTime);
+            transform.rotation = Quaternion.Euler(0, targetAngle, 0);
             Vector3 movedir = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
             Controller.Move((movedir * Speed + new Vector3(0, VerticalSpeed, 0))* Time.deltaTime);//
         }
