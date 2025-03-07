@@ -57,7 +57,7 @@ public abstract class EnemyControl : MonoBehaviour
         }
         else
         {
-            Destroy(this.gameObject, 3f);
+            Destroy(this.gameObject, 5f);
         }
     }
     protected virtual void Die()
