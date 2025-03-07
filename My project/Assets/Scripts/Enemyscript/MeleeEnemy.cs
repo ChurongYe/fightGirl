@@ -40,14 +40,15 @@ public class MeleeEnemy : EnemyControl
     }
     void Jump()
     {
-        rb.AddForce(new Vector3(direction, 1,0) * jumpForce, ForceMode.Impulse);
+        Vector3 jumpDirection = transform.forward * direction + transform.up;
+        rb.velocity = jumpDirection.normalized * jumpForce;
         isGrounded = false; 
     }
     IEnumerator DelayedTurn()
     {
         yield return new WaitForSeconds(1f);
 
-        transform.localScale = new Vector3(direction, transform.localScale.y, transform.localScale.z);
+        transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, direction );
     }
     public override void Attack()
     {
