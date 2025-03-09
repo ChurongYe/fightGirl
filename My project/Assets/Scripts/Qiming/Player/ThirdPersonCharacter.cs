@@ -31,8 +31,8 @@ public class ThirdPersonCharacter : MonoBehaviour
     {
         //if (!CanMove)
         //    return;
-        Horizontal = Input.GetAxis("Horizontal");
-        Vertical = Input.GetAxis("Vertical");
+        Horizontal = Input.GetAxisRaw("Horizontal");
+        Vertical = Input.GetAxisRaw("Vertical");
         JumpAndGravity();
         GroundedCheck();
         Vector3 dir = new Vector3(Horizontal, 0, Vertical).normalized;
