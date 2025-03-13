@@ -97,7 +97,7 @@ Material:
     - _HEIGHT_ENABLED: 0
     - _HorizonLineContribution: 0.121
     - _HorizonLineExponent: 12.3
-    - _Intensity: 0.59
+    - _Intensity: 1.16
     - _MaxHeight: 0.5
     - _Metallic: 0
     - _Mode: 0
