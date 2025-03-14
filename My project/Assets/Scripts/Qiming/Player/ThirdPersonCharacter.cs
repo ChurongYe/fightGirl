@@ -16,6 +16,7 @@ public class ThirdPersonCharacter : MonoBehaviour
     public float VerticalSpeed;
     public float TerminalSpeed;
     public float Speed;//
+    private float JumpMoveSpeed;
     public float RotateSpeed;//
     public float JumpTimeout;
     public float JumpHeight = 1.5f;
@@ -27,6 +28,10 @@ public class ThirdPersonCharacter : MonoBehaviour
     public float TurnSmoothTime=0.1f;//
 
     public bool CanMove = true;
+    void Awake()
+    {
+        JumpMoveSpeed = Speed;
+    }
     void Update()
     {
         //if (!CanMove)
@@ -98,10 +103,12 @@ public class ThirdPersonCharacter : MonoBehaviour
             }
             if (JumpTimeoutDelta >= 0.0f)
                 JumpTimeoutDelta -= Time.deltaTime;
+            Speed = MoveSpeed;
         }
         else
         {
             JumpTimeoutDelta = JumpTimeout;
+            Speed = JumpMoveSpeed;
         }
         if (VerticalSpeed < TerminalSpeed)
             VerticalSpeed += Gravity * Time.deltaTime;
