@@ -28,6 +28,10 @@ public class ThirdPersonCharacter : MonoBehaviour
     public float TurnSmoothTime=0.1f;//
 
     public bool CanMove = true;
+
+    public Animator Animator;
+    public PlayerAnimation playerAnimation;
+    bool ifWalking;
     void Awake()
     {
         JumpMoveSpeed = Speed;
@@ -47,13 +51,24 @@ public class ThirdPersonCharacter : MonoBehaviour
             //float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref RotateSpeed, TurnSmoothTime);
             transform.rotation = Quaternion.Euler(0, targetAngle, 0);
             Vector3 movedir = Quaternion.Euler(0, targetAngle, 0) * Vector3.forward;
-            Controller.Move((movedir * Speed + new Vector3(0, VerticalSpeed, 0))* Time.deltaTime);//
+            Controller.Move((movedir * Speed + new Vector3(0, VerticalSpeed, 0)) * Time.deltaTime);//
+            ifWalking = true;
         }
         else
+        {
             Controller.Move(new Vector3(0, VerticalSpeed, 0) * Time.deltaTime);
-       
+            ifWalking = false;
+        }
+        UpdateAnimation();
     }
-
+    void UpdateAnimation()
+    {
+        Animator.SetBool("ifwalk", ifWalking);
+        if (Grounded && playerAnimation.ifanimation )
+        {
+            Animator.SetBool("ifjump", false);
+        }
+    }
 
     //    Move();
 
@@ -100,6 +115,8 @@ public class ThirdPersonCharacter : MonoBehaviour
             {
                 VerticalSpeed = Mathf.Sqrt(JumpHeight * -2f * Gravity);
                 IsJumping = true;
+                Animator.SetBool("ifjump", true);
+                playerAnimation.ifanimation = false;
             }
             if (JumpTimeoutDelta >= 0.0f)
                 JumpTimeoutDelta -= Time.deltaTime;
@@ -117,6 +134,8 @@ public class ThirdPersonCharacter : MonoBehaviour
         {
             VerticalSpeed = Mathf.Sqrt(JumpHeight * -2f * Gravity);
             IsJumping = false;
+            Animator.SetBool("ifjump", true);
+            playerAnimation.ifanimation = false;
         }
     }
 
