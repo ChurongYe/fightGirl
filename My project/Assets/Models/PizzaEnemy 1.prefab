@@ -619,6 +619,7 @@ MonoBehaviour:
   damageCooldown: 0
   Playerhealth: {fileID: 0}
   Player: {fileID: 0}
+  Disappeartime: 7
 --- !u!65 &9109810645762427588
 BoxCollider:
   m_ObjectHideFlags: 0

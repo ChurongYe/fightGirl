@@ -10,6 +10,7 @@ public abstract class EnemyControl : MonoBehaviour
     public float damageCooldown;
     public PlayerHealth Playerhealth;
     public GameObject Player;
+    public float Disappeartime;
     private float lastDamageTime;
     private void Awake()
     {
@@ -57,7 +58,7 @@ public abstract class EnemyControl : MonoBehaviour
         }
         else
         {
-            Destroy(this.gameObject, 8f);
+            Destroy(this.gameObject, Disappeartime);
         }
     }
     protected virtual void Die()

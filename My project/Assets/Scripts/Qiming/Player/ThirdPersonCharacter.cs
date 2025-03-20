@@ -135,7 +135,7 @@ public class ThirdPersonCharacter : MonoBehaviour
             VerticalSpeed = Mathf.Sqrt(JumpHeight * -2f * Gravity);
             IsJumping = false;
             Animator.SetBool("ifjump", true);
-            playerAnimation.ifanimation = false;
+            //playerAnimation.ifanimation = false;
         }
     }
 
