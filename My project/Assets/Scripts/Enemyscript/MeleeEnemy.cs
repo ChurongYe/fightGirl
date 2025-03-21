@@ -10,6 +10,7 @@ public class MeleeEnemy : EnemyControl
     public float direction = 1f; 
     private bool isGrounded = false; 
     private float jumpTimer = 0f;
+    public Animator BergerAni;//
     private void Start()
     {
         damageCooldown = 0.5f;
@@ -17,6 +18,7 @@ public class MeleeEnemy : EnemyControl
 
     public override void HandleCollision(Collider collision)
     {
+        BergerAni.SetBool("IsMove", true);//
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
@@ -58,8 +60,9 @@ public class MeleeEnemy : EnemyControl
         {
             Jump();
             jumpTimer = 0f;
+           
         }
-
+   
         rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, rb.velocity.z);
     }
 

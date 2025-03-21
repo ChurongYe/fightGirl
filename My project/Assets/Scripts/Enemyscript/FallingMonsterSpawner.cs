@@ -112,8 +112,9 @@ public class FallingMonsterSpawner : MonoBehaviour
 
         Vector3 spawnPos = groundPos + Vector3.up * spawnHeight;
         GameObject monster = Instantiate(monsterPrefab, spawnPos, Quaternion.identity);
-
+        //monster.GetComponentInChildren<Animator>().SetBool("IsFall", true);
         Rigidbody rb = monster.GetComponent<Rigidbody>();
+       
         if (rb == null)
         {
             rb = monster.AddComponent<Rigidbody>();

@@ -12,6 +12,7 @@ public abstract class EnemyControl : MonoBehaviour
     public GameObject Player;
     public float Disappeartime;
     private float lastDamageTime;
+
     private void Awake()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
