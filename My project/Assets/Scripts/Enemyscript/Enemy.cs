@@ -25,12 +25,12 @@ public class Enemy : EnemyControl
     }
     public override void HandleCollision(Collider collision)//
     {
-        if (ChickenLegAni != null)
+        if (ChickenLegAni != null)//
         {
-            ChickenLegAni.SetBool("IsFall", false);//
-            Debug.Log("stop ani");
+            ChickenLegAni.SetBool("IsFall", false);
+            //Debug.Log("stop ani");
         }
-
+        //base below from parent
         if (collision.gameObject.CompareTag("Player"))
         {
 

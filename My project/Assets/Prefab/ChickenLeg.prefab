@@ -142,7 +142,7 @@ MonoBehaviour:
   damageCooldown: 0
   Playerhealth: {fileID: 0}
   Player: {fileID: 0}
-  Disappeartime: 3
+  Disappeartime: 0
   ChickenLegAni: {fileID: 1252079968002319838}
 --- !u!1 &8556614206937179802
 GameObject:
