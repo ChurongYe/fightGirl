@@ -48,7 +48,7 @@ public class Enemy : EnemyControl
         }
         if (collision.gameObject.CompareTag("Ground"))
         {
-            this.transform.GetComponent<Collider>().enabled = false;
+            this.transform.GetComponent<Collider>().enabled = false;s
         }
         else
         {
