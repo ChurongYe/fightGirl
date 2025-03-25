@@ -142,7 +142,7 @@ MonoBehaviour:
   damageCooldown: 0
   Playerhealth: {fileID: 0}
   Player: {fileID: 0}
-  Disappeartime: 0
+  Disappeartime: 3
   ChickenLegAni: {fileID: 1252079968002319838}
 --- !u!1 &8556614206937179802
 GameObject:
@@ -171,14 +171,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8556614206937179802}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2680475065998871842}
   m_Father: {fileID: 695831706843343615}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &32120411775717946
 MeshFilter:
   m_ObjectHideFlags: 0
