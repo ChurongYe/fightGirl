@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba3992c4c8e8ba148ac63d6e56d73cce, type: 3}
+  m_Name: TextureReferenceData
+  m_EditorClassIdentifier: 
+  dataset:
+  - TextureFileReference: {fileID: 11700000, guid: d1d15d0e43eb55a46a109491c8477362,
+      type: 2}
+    TextureTypeIdentifier: 1
+    TextureQualityDefinition: 0
+  - TextureFileReference: {fileID: 11700000, guid: 9cef6b4da1df1814d867a18e291b6de3,
+      type: 2}
+    TextureTypeIdentifier: 1
+    TextureQualityDefinition: 1
+  - TextureFileReference: {fileID: 11700000, guid: 95f2ce7e95c089c4db9d8354fa05ee95,
+      type: 2}
+    TextureTypeIdentifier: 1
+    TextureQualityDefinition: 2
+  - TextureFileReference: {fileID: 11700000, guid: 4f8ed4f7c68ce1743a115530a24124ff,
+      type: 2}
+    TextureTypeIdentifier: 1
+    TextureQualityDefinition: 3
+  - TextureFileReference: {fileID: 11700000, guid: 845f2e4e91b19f14385323763c7b455b,
+      type: 2}
+    TextureTypeIdentifier: 2
+    TextureQualityDefinition: 0
+  - TextureFileReference: {fileID: 11700000, guid: e3fcc43baf2dd894eac2697b3ec5c4e6,
+      type: 2}
+    TextureTypeIdentifier: 2
+    TextureQualityDefinition: 1
+  - TextureFileReference: {fileID: 11700000, guid: cbb87578213726046a300c4c6e0422d9,
+      type: 2}
+    TextureTypeIdentifier: 2
+    TextureQualityDefinition: 2
+  - TextureFileReference: {fileID: 11700000, guid: 815122955dfa38145b6d866de11641de,
+      type: 2}
+    TextureTypeIdentifier: 2
+    TextureQualityDefinition: 3
+  - TextureFileReference: {fileID: 11700000, guid: 5db06b11912662b48867bbaf667b170e,
+      type: 2}
+    TextureTypeIdentifier: 3
+    TextureQualityDefinition: 0
+  - TextureFileReference: {fileID: 11700000, guid: 375aa341fdda8f34f9aa0e1faa16fd85,
+      type: 2}
+    TextureTypeIdentifier: 3
+    TextureQualityDefinition: 1
+  - TextureFileReference: {fileID: 11700000, guid: 25c5229b7127d2c45a5f0d514750955a,
+      type: 2}
+    TextureTypeIdentifier: 3
+    TextureQualityDefinition: 2
+  - TextureFileReference: {fileID: 11700000, guid: 3ec3f6862884be04fa97a2431019ca10,
+      type: 2}
+    TextureTypeIdentifier: 3
+    TextureQualityDefinition: 3
