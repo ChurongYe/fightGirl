@@ -31,6 +31,8 @@ public class TagEnemy : MonoBehaviour
     {
         foreach (GameObject hiterea in Hiterea)
         {
+            hiterea.GetComponent<tag>().animator.SetTrigger("tag");
+            yield return new WaitForSeconds(0.3f);
             hiterea.SetActive(true);
             yield return new WaitForSeconds(1f);
             hiterea.SetActive(false);
