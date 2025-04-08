@@ -119,7 +119,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06db25a49efe8604bb87894aefce8bf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordPrefab: {fileID: 7671203485357333799, guid: 11866fcb81c31a4418211f20e7ead6ac, type: 3}
+  wordPrefab:
+  - {fileID: 2984506251702049191, guid: bfe8a1012ecf4e649af3211393f5d424, type: 3}
+  - {fileID: 2459380812843273223, guid: cc2e81a825142f247905257d7967beda, type: 3}
+  - {fileID: 3064331835674948743, guid: cddccf2fa503a7c4285fca82c6c98d73, type: 3}
   attackInterval: 3
   Distance: 100
   Wordenemy:

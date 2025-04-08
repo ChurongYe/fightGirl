@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 1175609123777651196}
   serializedVersion: 2
   m_LocalRotation: {x: 0.6955069, y: -0, z: -0, w: 0.7185195}
-  m_LocalPosition: {x: -12.738192, y: 31.399235, z: 14.491217}
-  m_LocalScale: {x: 3.7339816, y: 3.7339816, z: 3.7339816}
+  m_LocalPosition: {x: -15.922703, y: 31.399208, z: 18.113997}
+  m_LocalScale: {x: 4.6674776, y: 4.665417, z: 3.7344553}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5025250182780660092}
@@ -4737,8 +4737,8 @@ Transform:
   m_GameObject: {fileID: 3294230814082931540}
   serializedVersion: 2
   m_LocalRotation: {x: -0.8469664, y: -0, z: -0, w: 0.5316464}
-  m_LocalPosition: {x: 3.189997, y: 4.04, z: 9.628963}
-  m_LocalScale: {x: 0.25042778, y: 0.2504278, z: 0.2504278}
+  m_LocalPosition: {x: 1.59, y: 5.42, z: 8.58}
+  m_LocalScale: {x: 0.12, y: 0.2504278, z: 0.12}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8700079981566085396}
@@ -5936,11 +5936,11 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!114 &6360724614849802651
@@ -5956,6 +5956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 3697885635797550476}
+  Tag: {fileID: 2558844001546562122, guid: b1be151e2308a314fbb9685384416354, type: 3}
 --- !u!1 &3366242271619984175
 GameObject:
   m_ObjectHideFlags: 0
@@ -10731,7 +10732,7 @@ Transform:
   m_GameObject: {fileID: 7247923730121269736}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -328.6, y: -52.188, z: -854.81}
+  m_LocalPosition: {x: -328.8, y: -52.188, z: -854.81}
   m_LocalScale: {x: 2.3023, y: 2.3023, z: 2.3023}
   m_ConstrainProportionsScale: 0
   m_Children:

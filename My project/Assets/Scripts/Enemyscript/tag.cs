@@ -5,4 +5,5 @@ using UnityEngine;
 public class tag : MonoBehaviour
 {
     public Animator animator;
+
 }
