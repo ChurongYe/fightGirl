@@ -15,8 +15,9 @@ public class WordEnemy : EnemyControl
 
         if (distanceToPlayer < followDistance)
         {
-            Vector3 direction = (Player.transform.position - transform.position).normalized;
-
+            Vector3 Playerposition = new Vector3(Player.transform.position.x,
+                (Player.transform.position.y + 0.5f), Player.transform.position.z);
+            Vector3 direction = (Playerposition - transform.position).normalized;
             transform.position += direction * moveSpeed * Time.deltaTime;
         }
         Destroy(this.gameObject, 6f);

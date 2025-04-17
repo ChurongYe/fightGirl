@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class WordEnemySpawner : MonoBehaviour
 {
-    public GameObject wordPrefab;
+    public GameObject[] wordPrefab;
     public float attackInterval = 3f;
     public float Distance = 80f;  
     public LayerMask Wordenemy;
@@ -39,7 +39,8 @@ public class WordEnemySpawner : MonoBehaviour
     {
         Vector3 direction = Random.onUnitSphere;
         Vector3 spawnPosition = transform.position + transform.forward;
-        Instantiate(wordPrefab, spawnPosition, Quaternion.LookRotation(direction));
+        GameObject chosenPrefab = wordPrefab[Random.Range(0, wordPrefab.Length)];
+        Instantiate(chosenPrefab, spawnPosition, Quaternion.LookRotation(direction));
         yield return null;
 
     }

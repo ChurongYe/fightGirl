@@ -15,6 +15,7 @@ public class PlayerHealth : EnemyControl
     public bool isInvincible = false;
     //
     public Slider HP;
+    public GameObject Tag;
     //
     private void Start()
     {
@@ -45,9 +46,14 @@ public class PlayerHealth : EnemyControl
 
             //rb.AddForce(collisionDirection * bounceForce, ForceMode.Impulse);
         }
+        if (collision.gameObject.name == "TagEnemy")
+        {
+            Tag.SetActive(true);
+            StartCoroutine(slowdown());
+        }
         //
         //if (collision.gameObject.CompareTag("PickUp"))
-          //  isInvincible = true;
+        //  isInvincible = true;
         //
     }
     private IEnumerator Knockback(Collider collision)
@@ -68,5 +74,10 @@ public class PlayerHealth : EnemyControl
 
         thirdPersonCharacter.enabled = true;
         isKnockedBack = false;
+    }
+   IEnumerator slowdown()
+    {
+        yield return new WaitForSeconds(3f);
+        Tag.SetActive(false);
     }
 }
