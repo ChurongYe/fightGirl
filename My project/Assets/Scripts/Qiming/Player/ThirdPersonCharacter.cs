@@ -32,6 +32,7 @@ public class ThirdPersonCharacter : MonoBehaviour
     public Animator Animator;
     public PlayerAnimation playerAnimation;
     bool ifWalking;
+    public bool scene3;
     void Awake()
     {
         JumpMoveSpeed = Speed;
@@ -111,7 +112,7 @@ public class ThirdPersonCharacter : MonoBehaviour
         {
             if (VerticalSpeed < 0.0f)
                 VerticalSpeed = -2f;
-            if (Input.GetKeyDown(KeyCode.Space) && JumpTimeoutDelta <= 0)
+            if (Input.GetKeyDown(KeyCode.Space) && JumpTimeoutDelta <= 0 && !scene3)
             {
                 VerticalSpeed = Mathf.Sqrt(JumpHeight * -2f * Gravity);
                 IsJumping = true;
@@ -130,7 +131,7 @@ public class ThirdPersonCharacter : MonoBehaviour
         if (VerticalSpeed < TerminalSpeed)
             VerticalSpeed += Gravity * Time.deltaTime;
         //Double Jump
-        if (!Grounded && IsJumping && Input.GetKeyDown(KeyCode.Space))
+        if (!Grounded && IsJumping && Input.GetKeyDown(KeyCode.Space) && !scene3)
         {
             VerticalSpeed = Mathf.Sqrt(JumpHeight * -2f * Gravity);
             IsJumping = false;

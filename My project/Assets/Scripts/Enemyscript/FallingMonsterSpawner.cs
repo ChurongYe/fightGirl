@@ -16,6 +16,7 @@ public class FallingMonsterSpawner : MonoBehaviour
     public List<Vector3> rangePositions = new List<Vector3>();
     public List<Vector3> groundPositions = new List<Vector3>();
     private float Waittime;
+    public float minDistanceBetweenMonsters = 3f;
     void Start()
     {
         InvokeRepeating(nameof(StartFiring), 0f, attackInterval);
@@ -26,6 +27,7 @@ public class FallingMonsterSpawner : MonoBehaviour
     }
     void StartFiring()
     {
+        rangePositions.Clear();
         SpawnMonsterWithWarning();
     }
     void SpawnMonsterWithWarning()
@@ -47,7 +49,7 @@ public class FallingMonsterSpawner : MonoBehaviour
 
                 foreach (var pos in rangePositions)
                 {
-                    if (Vector3.Distance(RangePos, pos) < 3f)
+                    if (Vector3.Distance(RangePos, pos) < minDistanceBetweenMonsters)
                     {
                         isValidPosition = false; 
                         break; 
@@ -90,6 +92,10 @@ public class FallingMonsterSpawner : MonoBehaviour
             }
             Debug.DrawRay(groundPos, Vector3.down * checkDistance, Color.red, 1f);
         }
+        if (!gameObject.activeInHierarchy)
+        {
+            return;
+        }
         StartCoroutine(SpawnWarningsWithDelay());
 
     }
@@ -102,7 +108,7 @@ public class FallingMonsterSpawner : MonoBehaviour
             yield return new WaitForSeconds(Waittime);
 
             GameObject warning =  Instantiate(warningPrefab, groundPos + up, Quaternion.identity);
-
+            warning.transform.SetParent(this.transform, true);
             StartCoroutine(SpawnMonsterAfterDelay(groundPos, warning));
         }
     }
@@ -112,6 +118,7 @@ public class FallingMonsterSpawner : MonoBehaviour
 
         Vector3 spawnPos = groundPos + Vector3.up * spawnHeight;
         GameObject monster = Instantiate(monsterPrefab, spawnPos, Quaternion.identity);
+        monster.transform.SetParent(this.transform , true);
         //monster.GetComponentInChildren<Animator>().SetBool("IsFall", true);
         Rigidbody rb = monster.GetComponent<Rigidbody>();
        
@@ -120,7 +127,7 @@ public class FallingMonsterSpawner : MonoBehaviour
             rb = monster.AddComponent<Rigidbody>();
         }
         Destroy(warning, 1.5f);
-        rangePositions.Clear();
+        //rangePositions.Clear();
     }
     void OnDrawGizmos()
     {

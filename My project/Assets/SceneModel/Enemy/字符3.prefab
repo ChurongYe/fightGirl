@@ -105,7 +105,7 @@ MonoBehaviour:
   Playerhealth: {fileID: 0}
   Player: {fileID: 0}
   Disappeartime: 0
-  moveSpeed: 5
+  moveSpeed: 7
   followDistance: 50
 --- !u!65 &250624907158635574
 BoxCollider:

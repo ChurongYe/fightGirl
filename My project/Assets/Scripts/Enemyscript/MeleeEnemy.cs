@@ -11,6 +11,7 @@ public class MeleeEnemy : EnemyControl
     private bool isGrounded = false; 
     private float jumpTimer = 0f;
     public Animator BergerAni;//
+    public float jumpheight = 1f;
     private void Start()
     {
         damageCooldown = 0.5f;
@@ -42,7 +43,7 @@ public class MeleeEnemy : EnemyControl
     }
     void Jump()
     {
-        Vector3 jumpDirection = transform.forward * direction + transform.up;
+        Vector3 jumpDirection = transform.forward * direction + transform.up * jumpheight;
         rb.velocity = jumpDirection.normalized * jumpForce;
         isGrounded = false; 
     }

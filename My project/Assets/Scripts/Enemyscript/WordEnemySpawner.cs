@@ -10,6 +10,7 @@ public class WordEnemySpawner : MonoBehaviour
     public float Distance = 80f;  
     public LayerMask Wordenemy;
     private bool Ifhit = false;
+    public bool lethit;
     private void Update()
     {
         Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
@@ -29,7 +30,7 @@ public class WordEnemySpawner : MonoBehaviour
 
     void StartFiring()
     {
-        if (Ifhit)
+        if (Ifhit|| lethit)
         {
             StartCoroutine(FireAttack());
         }

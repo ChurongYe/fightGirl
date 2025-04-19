@@ -18,6 +18,10 @@ public class RangedEnemy : MonoBehaviour
 
     void StartFiring()
     {
+        if (!gameObject.activeInHierarchy)
+        {
+            return;
+        }
         StartCoroutine(FireAttack());
     }
 
