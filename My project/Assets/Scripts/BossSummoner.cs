@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossSummoner : EnemyControl
 {
-    private int currentHealth;
+    public int currentHealth;
 
     public bool isInvincible = true;
     private bool isSummoning = false;

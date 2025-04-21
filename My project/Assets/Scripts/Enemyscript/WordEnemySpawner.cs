@@ -30,6 +30,10 @@ public class WordEnemySpawner : MonoBehaviour
 
     void StartFiring()
     {
+        if (!gameObject.activeInHierarchy)
+        {
+            return;
+        }
         if (Ifhit|| lethit)
         {
             StartCoroutine(FireAttack());

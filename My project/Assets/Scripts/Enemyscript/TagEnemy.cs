@@ -18,6 +18,10 @@ public class TagEnemy : MonoBehaviour
     }
     void StartFiring()
     {
+        if (!gameObject.activeInHierarchy)
+        {
+            return;
+        }
         StartCoroutine(FireAttack());
     }
     void UpdateEnemyList()
